@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <meta name="google-signin-client_id"
+        content="285119790139-ilcmcqsorgjvclong01h2bab95becqo9.apps.googleusercontent.com">
 </head>
 
 <body class="flex items-center justify-center h-screen bg-gray-100">
@@ -38,18 +41,29 @@
                 </button>
             </div>
         </form>
-        <div class="mt-6">
+        <div class="mt-6 grow h-14 g-signin2" data-onsuccess="onSignIn"></div>
+        <!-- <div class="mt-6">
             <button
                 class="flex items-center justify-center w-full py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
                 <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="mr-2">
                 Sign up with Google
             </button>
-        </div>
+        </div> -->
         <p class="mt-4 text-sm text-gray-600">Already have an account? <a href="signin" class="text-blue-500">Sign
                 In</a></p>
     </div>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+        /* GOO */
+        
         document.getElementById("signupForm").addEventListener("submit", async (event) => {
             event.preventDefault();
             const formData = new FormData(event.target);

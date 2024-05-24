@@ -4,6 +4,8 @@ import { connectDB } from './config/mongoose.js';
 import cookieParser from "cookie-parser";
 import expressLayout from "express-ejs-layouts"
 import router from './routes/index.js';
+import http from "http"
+import fs from "fs"
 
 import {
     errorHandlerMiddleware,
@@ -20,6 +22,8 @@ app.use(expressLayout)
 app.use("/",router)
 // errorHandlerMiddleware
 app.use(errorHandlerMiddleware);
+
+
 
 app.listen(process.env.port,(error)=>{
     if(!error){

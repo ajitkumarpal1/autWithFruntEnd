@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+    <meta name="google-signin-client_id"
+        content="285119790139-ilcmcqsorgjvclong01h2bab95becqo9.apps.googleusercontent.com">
     
 </head>
+
 <body class="flex items-center justify-center h-screen bg-gray-100">
     <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6">Sign In</h2>
         <form id="signInForm">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" id="email" type="email" placeholder="Your Email" required>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    name="email" id="email" type="email" placeholder="Your Email" required>
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="password" id="password" type="password" placeholder="**********" required>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    name="password" id="password" type="password" placeholder="**********" required>
             </div>
             <div class="flex items-center justify-between">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
                     Sign In
                 </button>
-                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/forgot-password">
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                    href="/forgot-password">
                     Forgot Password?
                 </a>
             </div>
         </form>
-        <div class="mt-6">
-            <button class="flex items-center justify-center w-full py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+        <div class="mt-6 grow h-14 g-signin2" data-onsuccess="onSignIn"></div>
+        <!-- <div class="mt-6">
+            <button
+                class="flex items-center justify-center w-full py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 "
+                id="signin" ">
                 <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="mr-2">
                 Sign in with Google
             </button>
-        </div>
-        <p class="mt-4 text-sm text-gray-600">Don't have an account? <a href="/signup" class="text-blue-500">Sign Up</a></p>
+        </div> -->
+        <p class="mt-4 text-sm text-gray-600">Don't have an account? <a href="/signup" class="text-blue-500">Sign Up</a>
+        </p>
     </div>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+        /* GOO */
         document.getElementById("signInForm").addEventListener("submit", async (event) => {
             event.preventDefault();
             const formData = new FormData(event.target);
@@ -66,4 +89,5 @@
         });
     </script>
 </body>
+
 </html>
