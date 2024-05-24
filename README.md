@@ -30,7 +30,7 @@ This project is a complete authentication system built using Node.js, Express, a
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone [https://github.com/your-username/your-repo.git](https://github.com/ajitkumarpal1/autWithFruntEnd)
     ```
 2. Navigate to the project directory:
     ```bash
@@ -60,7 +60,7 @@ This project is a complete authentication system built using Node.js, Express, a
     ```bash
     npm start
     ```
-2. Open your browser and navigate to `http://localhost:3000`.
+2. Open your browser and navigate to `http://localhost:9000`.
 
 ### Folder Structure Explanation
 
@@ -106,10 +106,7 @@ This project is a complete authentication system built using Node.js, Express, a
 - Ensure all environment variables are set correctly.
 - Deploy the application on a platform like Heroku, AWS, or any other cloud provider.
 
-## Video Explanation
-- [YouTube Video Link](https://youtube.com/your-video-link)
-  - Explanation of folder structure.
-  - Running code demonstration.
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
