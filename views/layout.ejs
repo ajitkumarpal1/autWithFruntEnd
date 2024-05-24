@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex flex-col">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">MyApp</h1>
+            <div>
+                <a href="/api/users/signout" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-4">Sign Out</a>
+                <a href="/forgot-password" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Reset Password</a>
+            </div>
+        </div>
+    </header>
+    <%- body %>
+</body>
+</html>

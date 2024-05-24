@@ -1,0 +1,44 @@
+{
+  "name": "nodejs-authentication",
+  "version": "1.0.0",
+  "description": "TIME: (Ideal time of completion: 12 hours)",
+  "main": " a complete authentication system which can be used as a starter code for creating any new",
+  "type": "module",
+  "scripts": {
+    "test": "on"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ending mails"
+  },
+  "keywords": [
+    "dme",
+    "on",
+    "how",
+    "to",
+    "setup",
+    "the",
+    "project",
+    "on",
+    "local",
+    "system"
+  ],
+  "author": "Scaleable folder structure (separate models, controllers and routes)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0",
+    "passport": "^0.7.0",
+    "validator": "^13.12.0"
+  }
+}
